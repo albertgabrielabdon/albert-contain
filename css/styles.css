@@ -421,7 +421,6 @@ header h1 {
     justify-content: center; 
     align-items: center; 
     text-align: center; 
-
 }
 
 .artist-txt {
@@ -431,11 +430,20 @@ header h1 {
 
 }
 
+.artist-img-center {
+    display:flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
 .artist-img img {
     height:100px;
     width:100px; 
     object-fit: cover; 
     border-radius: 50%;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
 }
 
 .play-buttons {
@@ -525,6 +533,7 @@ header h1 {
 input[type="range"] {
     width: 100%; 
     appearance: none; 
+    
 }
 
 input[type="range"]::-webkit-slider-thumb {

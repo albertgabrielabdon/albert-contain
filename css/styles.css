@@ -673,7 +673,7 @@ input[type="range"]::-webkit-slider-thumb {
     text-align: center;
     color: #1DB954;
     font-weight: bold;
-    flex-shrink: 0; /* if you're using flex and want to prevent shrinking */
+    flex-shrink: 0; 
 }
 
 .friend-img {

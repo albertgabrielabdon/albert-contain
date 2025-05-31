@@ -365,34 +365,34 @@ header h1 {
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .section-personal {
-      flex-direction: column; /* stack vertically */
-      align-items: center;    /* center horizontally */
+      flex-direction: column; 
+      align-items: center;   
     }
   
     .left-cont-plist {
-      order: 1; /* top */
-      margin-bottom: 1rem; /* spacing */
-      width: 100%;      /* Take full width */
-      max-width: 100%;  /* Remove any max-width restriction */
-      padding: 0 1rem;  /* Optional: add side padding */
-      box-sizing: border-box; /* Ensure padding doesn’t increase total width */
+      order: 1; 
+      margin-bottom: 1rem; 
+      width: 100%;      
+      max-width: 100%;  
+      padding: 0 1rem;  
+      box-sizing: border-box; 
     }
     
-      /* Make playlist items or the list inside left-cont-plist take full width */
+     
     .left-cont-plist > * {
-      width: 100% !important;   /* force full width */
+      width: 100% !important;   
       max-width: 100% !important;
-      white-space: normal;      /* allow wrapping if text is long */
+      white-space: normal;      
       }
     }
     .plist {
-      order: 2; /* middle */
-      margin-bottom: 1rem; /* spacing */
+      order: 2;
+      margin-bottom: 1rem; 
     }
     .right-cont-plist {
-      order: 3; /* bottom */
+      order: 3; 
     }
 
 
@@ -660,11 +660,20 @@ input[type="range"]::-webkit-slider-thumb {
     background-color: #282828; 
     transition-delay: 0.1s;
 }
-
+/*
 .rank {
     padding-right:20px;
     color:#1DB954;
     font-weight:bold;
+}*/
+
+.rank {
+    width: 20px; 
+    margin-right:24px;
+    text-align: center;
+    color: #1DB954;
+    font-weight: bold;
+    flex-shrink: 0; /* if you're using flex and want to prevent shrinking */
 }
 
 .friend-img {

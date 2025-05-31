@@ -35,12 +35,12 @@ document.addEventListener('DOMContentLoaded', function() {
       starsContainer.appendChild(shootingStar);
     }
   
-    for (let i = 0; i < 150; i++) { // no of stars as needed, 300 if old, 100 if new.
+    for (let i = 0; i < 70; i++) { // no of stars as needed, 300 if old, 100 if new.
       createStar();
     }
   
     // create shooting stars
-    for (let i = 0; i < 25; i++) { // no of shooting stars
+    for (let i = 0; i < 10; i++) { // no of shooting stars
       createShootingStar();
     }
   

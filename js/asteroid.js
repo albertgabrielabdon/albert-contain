@@ -30,9 +30,8 @@ function createAsteroid() {
 
     asteroid.addEventListener('animationend', () => {
         asteroid.remove();
-        activeAsteroids--; // Decrement the count when asteroid is removed
+        activeAsteroids--; 
     });
 }
 
-// Spawn asteroids at intervals
-setInterval(createAsteroid, 5000); // Adjust time to control spawn rate
+setInterval(createAsteroid, 5000); // control spawn rate

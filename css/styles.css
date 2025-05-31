@@ -355,14 +355,46 @@ header h1 {
 .list-of-plist{
 
     /*background-color: #1c1c1c; */
-    max-height: 750px; 
+    max-height: 950px; 
     overflow-y: auto; 
+    margin-top:10px;
 
 }
 .my-plist{
     margin:30px;
 
 }
+
+@media (max-width: 768px) {
+    .section-personal {
+      flex-direction: column; /* stack vertically */
+      align-items: center;    /* center horizontally */
+    }
+  
+    .left-cont-plist {
+      order: 1; /* top */
+      margin-bottom: 1rem; /* spacing */
+      width: 100%;      /* Take full width */
+      max-width: 100%;  /* Remove any max-width restriction */
+      padding: 0 1rem;  /* Optional: add side padding */
+      box-sizing: border-box; /* Ensure padding doesn’t increase total width */
+    }
+    
+      /* Make playlist items or the list inside left-cont-plist take full width */
+    .left-cont-plist > * {
+      width: 100% !important;   /* force full width */
+      max-width: 100% !important;
+      white-space: normal;      /* allow wrapping if text is long */
+      }
+    }
+    .plist {
+      order: 2; /* middle */
+      margin-bottom: 1rem; /* spacing */
+    }
+    .right-cont-plist {
+      order: 3; /* bottom */
+    }
+
 
 /*<li>
                             <div class="artist-cont">
@@ -384,85 +416,80 @@ header h1 {
                             </div>
                         </li>*/
 
-.artist-cont {
-    display: flex; 
-    flex-direction: column; 
-    align-items: flex-start; 
-    justify-content: center; 
-    align-items: center; 
+.artist-cont { 
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; 
+    justify-content: space-between; 
     text-align: center;
- 
 }
 
 .top-cont-artist {
-    display:flex;
-    width:100%;
+    display: flex;
+    width: 100%;
+    align-items: stretch;
 }
 
 .bot-cont-artist {
     display: flex;
     flex-direction: row;
-    width:100%;
+    width: 100%;
+    
 }
 
+.artist-img-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    
+}
 
 .artist-img {
-    padding:20px;
-    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left:15px;
+    height: 100%; 
+}
+
+.artist-img img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .artist-txt {
     flex: 3;
-    padding:20px;
-    padding-top:30px;
-}
-
-.artist-img {
+    padding: 20px;
+    padding-left:30px;
+    padding-right:10px;
+    font-size:1rem;
+    
+    display: flex;
+    flex-direction: column;
     justify-content: center; 
-    align-items: center; 
-    text-align: center; 
-}
-
-.artist-txt {
-    justify-content: center; 
-    align-items: center; 
-    text-align: left; 
-
-}
-
-.artist-img-center {
-    display:flex;
-    justify-content: center; 
-    align-items: center; 
-}
-
-.artist-img img {
-    height:100px;
-    width:100px; 
-    object-fit: cover; 
-    border-radius: 50%;
-    justify-content: center; 
-    align-items: center; 
-    text-align: center; 
+    text-align: left;
 }
 
 .play-buttons {
-
-    justify-content: center; 
-    align-items: center; 
-    text-align: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 1;
-    padding-bottom:10px;
-
+    padding-bottom: 10px;
+    
 }
 
 .play-buttons button {
-    background-color:transparent;
-    color:white;
+    background-color: transparent;
+    color: white;
     border: transparent;
     transform: scale(2);
-
 }
+
 
 /*
 .play-buttons button {
@@ -486,6 +513,34 @@ header h1 {
     text-align: center; 
 }
 
+.line-content {
+    position: relative;
+    display:flex;
+    padding-left:30px;
+    padding-right:30px;
+
+}
+
+.line-content span {
+    font-size: 0.8rem; 
+    position: absolute; 
+    bottom: -22px; 
+    padding-left:30px;
+    padding-right:30px;
+}
+
+.line-content span:first-of-type {
+    left: 0; 
+}
+
+.line-content span:last-of-type {
+    right: 0; 
+}
+
+.line-content .progress-bar {
+    flex: 1;
+    margin: 0 5px;
+}
 
 .play-fields {
     flex:3;
@@ -529,6 +584,8 @@ header h1 {
     /*background: #ffffff; */
     border-radius: 50%; 
 }
+
+
 /*
 input[type="range"] {
     width: 100%; 
@@ -552,6 +609,7 @@ input[type="range"]::-webkit-slider-thumb {
     background-color: #000000; 
 
 }
+
 
 .left-cont-plist h2{
     display:flex;
@@ -580,7 +638,7 @@ input[type="range"]::-webkit-slider-thumb {
     flex-direction: column; 
     align-items: flex-start; 
     /*background-color: #1c1c1c; */
-    max-height: 850px; 
+    max-height: 1075px; 
     overflow-y: auto; 
 
 }
@@ -664,19 +722,36 @@ input[type="range"]::-webkit-slider-thumb {
     flex: 2; 
     background-color: #0f0f0f; 
     padding: 20px; 
-    padding-top: 300px;
-    padding-bottom:100px;
+    padding-top: 100px;
+    padding-bottom:30px;
     border-radius: 8px; 
+   /* opacity: 50;*/
+    transition: opacity 1s ease-in-out; 
+}
+
+.spotify-image {
+    width:50%; /* Adjust based on your image size */
+    height:auto;
+    object-fit: cover;
+    margin-right: 10px; /* Space between image and text */
+    transition: transform 1s ease-in-out; /* Sliding effect */
+}
+
+.plist > h2, p {
+    margin: 0;
+    /* opacity: 0; Initially hidden */
+    transition: opacity 1s ease-in-out 0.5s; /* Delay to sync with image */
 }
 
 .song-list {
+    display: none;
     list-style: none; 
     padding: 0; 
     margin: 20px 0;
     display: flex; 
     flex-direction: column; 
     align-items: flex-start; 
-    max-height: 425px; 
+    max-height: 495px; 
     overflow-y: auto; 
 }
 
